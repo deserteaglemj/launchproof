@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<!-- Source for docs/demo.png. Output lines are copied from a real run of index.js on 2026-10-17. -->
+<style>
+  html, body { margin: 0; width: 1200px; height: 520px; overflow: hidden; }
+  body { background: #141413; color: #f2f0ea; font: 24px/1.55 ui-monospace, Menlo, Consolas, monospace; padding: 40px 48px; box-sizing: border-box; }
+  .bar { display: flex; gap: 10px; margin-bottom: 28px; }
+  .bar i { width: 14px; height: 14px; border-radius: 50%; background: #3a3936; display: block; }
+  .c { color: #8f8c84; }
+  .k { color: #8fb0ff; }
+  .s { color: #e6c07b; }
+  .o { color: #98c379; }
+  p { margin: 0; white-space: pre; }
+</style></head>
+<body>
+<div class="bar"><i></i><i></i><i></i></div>
+<p><span class="c">&gt;</span> <span class="k">const</span> { slugify } = require(<span class="s">"tiny-slug"</span>)</p>
+<p><span class="c">&gt;</span> slugify(<span class="s">"Crème Brûlée &amp; Café Recipes!"</span>)</p>
+<p class="o">'creme-brulee-and-cafe-recipes'</p>
+<p><span class="c">&gt;</span> slugify(<span class="s">"Hello, World!"</span>, { separator: <span class="s">"_"</span> })</p>
+<p class="o">'hello_world'</p>
+<p><span class="c">&gt;</span> slugify(<span class="s">"How to write a tiny slug library"</span>, { maxLength: 20 })</p>
+<p class="o">'how-to-write-a-tiny'</p>
+</body></html>

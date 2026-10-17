@@ -1,0 +1,19 @@
+{
+  "description": "Word frequency counter CLI for plain text files: prints the most common words, with stop-word filtering, using only the Python standard library.",
+  "homepage": "https://example-dev.github.io/wordfreq/",
+  "topics": [
+    "word-frequency",
+    "word-count",
+    "word-counter",
+    "text-analysis",
+    "text-processing",
+    "cli",
+    "command-line-tool",
+    "python",
+    "python3",
+    "stop-words",
+    "corpus-linguistics",
+    "no-dependencies"
+  ],
+  "apply_with": "gh repo edit example-dev/wordfreq --description \"Word frequency counter CLI for plain text files: prints the most common words, with stop-word filtering, using only the Python standard library.\" --homepage \"https://example-dev.github.io/wordfreq/\" --add-topic word-frequency --add-topic word-count --add-topic word-counter --add-topic text-analysis --add-topic text-processing --add-topic cli --add-topic command-line-tool --add-topic python --add-topic python3 --add-topic stop-words --add-topic corpus-linguistics --add-topic no-dependencies (run only after the owner approves)"
+}

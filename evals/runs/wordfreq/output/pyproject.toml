@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wordfreq"
+version = "0.3.0"
+description = "Word frequency counter CLI for plain text files: prints the most common words, with stop-word filtering, using only the Python standard library."
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "example-dev"}]
+keywords = ["word-frequency", "word-count", "text-analysis", "cli", "stop-words", "corpus", "nlp"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Environment :: Console",
+    "Topic :: Text Processing :: Linguistic",
+]
+
+[project.urls]
+Homepage = "https://example-dev.github.io/wordfreq/"
+Repository = "https://github.com/example-dev/wordfreq"
+Changelog = "https://github.com/example-dev/wordfreq/blob/main/CHANGELOG.md"
+
+[project.scripts]
+wordfreq = "wordfreq.cli:main"
+
+[tool.setuptools]
+packages = ["wordfreq"]

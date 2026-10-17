@@ -1,0 +1,24 @@
+{
+  "description": "Screenshot to code plugin for Claude Code and Codex: turns a screenshot into HTML + CSS or React + Tailwind with no API key, then renders, scores (SSIM) and fixes it until it passes.",
+  "homepage": "https://deserteaglemj.github.io/shotproof/",
+  "topics": [
+    "screenshot-to-code",
+    "screenshot-to-html",
+    "image-to-code",
+    "design-to-code",
+    "claude-code",
+    "claude-code-plugin",
+    "codex",
+    "codex-plugin",
+    "agent-skills",
+    "html",
+    "css",
+    "react",
+    "tailwindcss",
+    "playwright",
+    "ssim",
+    "visual-regression",
+    "python"
+  ],
+  "apply_with": "gh repo edit deserteaglemj/shotproof --description \"Screenshot to code plugin for Claude Code and Codex: turns a screenshot into HTML + CSS or React + Tailwind with no API key, then renders, scores (SSIM) and fixes it until it passes.\" --homepage \"https://deserteaglemj.github.io/shotproof/\" --add-topic screenshot-to-code --add-topic screenshot-to-html --add-topic image-to-code --add-topic design-to-code --add-topic claude-code --add-topic claude-code-plugin --add-topic codex --add-topic codex-plugin --add-topic agent-skills --add-topic html --add-topic css --add-topic react --add-topic tailwindcss --add-topic playwright --add-topic ssim --add-topic visual-regression --add-topic python (run only after the owner approves)"
+}

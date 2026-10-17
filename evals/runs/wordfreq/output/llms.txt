@@ -1,0 +1,17 @@
+# wordfreq
+
+> wordfreq is a word frequency counter CLI for plain text files. It prints the most common words across one or more files, lower-cased, with optional stop words, using only the Python standard library (Python 3.9+). It counts words in your own files; it is unrelated to the PyPI package of the same name, which looks up word frequencies in languages.
+
+Install: `pip install git+https://github.com/example-dev/wordfreq`. Run: `wordfreq FILE... -n 20 --stop the,and`. Known limit: ASCII letters only. MIT license.
+
+## Docs
+
+- [README](https://github.com/example-dev/wordfreq/blob/main/README.md): what it does, install, proof, comparison, limitations, FAQ
+- [AGENTS.md](https://github.com/example-dev/wordfreq/blob/main/AGENTS.md): commands and layout for coding agents
+- [Eval results](https://github.com/example-dev/wordfreq/blob/main/evals/RESULTS.md): 10 fixed cases and their outcomes
+- [CHANGELOG](https://github.com/example-dev/wordfreq/blob/main/CHANGELOG.md): release history
+
+## Optional
+
+- [Landing page](https://example-dev.github.io/wordfreq/)
+- [Source: cli.py](https://github.com/example-dev/wordfreq/blob/main/wordfreq/cli.py)

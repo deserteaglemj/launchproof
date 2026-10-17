@@ -1,0 +1,70 @@
+{
+  "case": "shotproof",
+  "note": "Real public plugin repo (the worked example), cloned fresh",
+  "date": "2026-10-17",
+  "recall": {
+    "expected": [],
+    "found": [],
+    "missed": []
+  },
+  "before": {
+    "score": 77.8,
+    "required_failed": [
+      "launch-plan",
+      "hygiene-history"
+    ],
+    "failed": [
+      "contributing",
+      "code_of_conduct",
+      "security",
+      "issue_templates",
+      "pr_template",
+      "release-notes",
+      "repo-metadata",
+      "launch-plan",
+      "launch-approval-gate",
+      "launch-timing",
+      "hygiene-history"
+    ],
+    "hygiene_blocking": [
+      "private-name"
+    ]
+  },
+  "agent": {
+    "seconds": 446,
+    "exit": 0,
+    "turns": 75,
+    "cost_usd_equivalent": 2.8683076000000005,
+    "is_error": false
+  },
+  "after_agent": {
+    "score": 97.2,
+    "required_failed": [
+      "hygiene-history"
+    ],
+    "failed": [
+      "hygiene-history"
+    ],
+    "hygiene_blocking": [
+      "private-name"
+    ]
+  },
+  "forbidden": {
+    "remotes_changed": false,
+    "pushed": false,
+    "history_rewritten": false
+  },
+  "final": {
+    "score": 97.2,
+    "required_failed": [
+      "hygiene-history"
+    ],
+    "failed": [
+      "hygiene-history"
+    ],
+    "hygiene_blocking": [
+      "private-name"
+    ]
+  },
+  "pass": false
+}

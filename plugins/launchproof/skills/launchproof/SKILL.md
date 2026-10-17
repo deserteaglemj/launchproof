@@ -10,7 +10,13 @@ You turn a finished build into a repo people trust, install and can find, then p
 - **Evidence over adjectives.** Every number and claim points to a file in the repo. No "first", "only", "best", "fastest", "leading", "state of the art". If you cannot back a claim, cut it.
 - **The owner publishes.** Never run `git push`, `gh repo create`, `gh repo edit --visibility public`, `gh release create`, Pages enablement, history rewrites, or post or submit anything. Write those as exact commands in the final report for the owner to approve and run.
 
-Helper (Python 3.9+, standard library only): `scripts/lp.py` next to this file, called with its absolute path as `LP` below. Commands show `python3`; if that is missing or blocked by a shim, use any Python 3.9+ (`uv run python`, `/usr/bin/python3`). Exit code 1 from `hygiene` or `audit` means findings, not a crash. References in `references/`: read each one at the step that names it.
+**The helper is part of this skill, already on disk:** `LP` = `${CLAUDE_SKILL_DIR}/scripts/lp.py` (Python 3.9+, standard library only). If that variable was not expanded (some hosts), use `scripts/lp.py` inside the base directory this skill was loaded from; if you still cannot see it, find it with `find ~ -path '*launchproof/scripts/lp.py' -not -path '*/node_modules/*' 2>/dev/null | head -1`. Never skip the helper or substitute your own checks for it. Commands show `python3`; if that is missing or blocked by a shim, use any Python 3.9+ (`uv run python`, `/usr/bin/python3`). Exit code 1 from `hygiene` or `audit` means findings, not a crash. Templates are in `${CLAUDE_SKILL_DIR}/templates/`, guides in `${CLAUDE_SKILL_DIR}/references/`; read each guide at the step that names it.
+
+If the request only asks to check or audit ("is my repo ready", "audit"), run steps 0, 1 and 8 read-only, explain each failure and its fix, and change nothing.
+
+**Required outputs, all inside TARGET** (never in a scratch or temp folder): `README.md`, `LICENSE`, `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`, `CHANGELOG.md`, `.github/ISSUE_TEMPLATE/`, `.github/pull_request_template.md`, `.github/workflows/<name>.yml`, `llms.txt`, `AGENTS.md`, `docs/index.html`, `docs/robots.txt`, `docs/sitemap.xml`, `docs/social-preview.png`, `docs/launch/repo-metadata.json`, `docs/releases/vX.Y.Z.md`, `docs/launch/LAUNCH-PLAN.md`, `docs/launch/posts/*.md`, and a proof file (for example `evals/RESULTS.md`).
+
+**Done means** `python3 LP audit TARGET --rev <branch>` scores 90 or more and its only required failure, if any, is `hygiene-history` (which needs the owner's approved rewrite). Paste the audit's final `score` line in your report. Do not describe the audit as passing without running it. References in `references/`: read each one at the step that names it.
 
 ## 0. Setup
 
@@ -68,7 +74,7 @@ Write `docs/launch/LAUNCH-PLAN.md`:
 ## 8. Audit and fix loop
 
 1. `python3 LP audit TARGET --rev <branch>` (add `--names FILE` if used in step 1).
-2. For each FAIL, fix the cause in the files, not the check. Re-run. Stop when the score is 90 or more with no required failures, or after 5 rounds; then report what is still failing and why.
+2. For each FAIL, fix the cause in the files, not the check. Re-run. Stop when the score is 90 or more and the only required failure left, if any, is `hygiene-history`, or after 5 rounds; then report what is still failing and why.
 3. Re-read the README and LAUNCH-PLAN once as a skeptical stranger: is every claim backed, is anything private, does the quickstart work as written?
 
 ## 9. Report

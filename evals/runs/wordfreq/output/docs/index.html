@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>wordfreq: word frequency counter CLI for text files</title>
+  <meta name="description" content="Word frequency counter CLI for plain text files: prints the most common words, with stop-word filtering, using only the Python standard library.">
+  <link rel="canonical" href="https://example-dev.github.io/wordfreq/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="wordfreq: word frequency counter CLI for text files">
+  <meta property="og:description" content="Prints the most common words across text files, with stop-word filtering. Python standard library only.">
+  <meta property="og:url" content="https://example-dev.github.io/wordfreq/">
+  <meta property="og:image" content="https://example-dev.github.io/wordfreq/social-preview.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="wordfreq: word frequency counter CLI for text files">
+  <meta name="twitter:image" content="https://example-dev.github.io/wordfreq/social-preview.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    "name": "wordfreq",
+    "description": "Word frequency counter CLI for plain text files: prints the most common words, with stop-word filtering, using only the Python standard library.",
+    "codeRepository": "https://github.com/example-dev/wordfreq",
+    "url": "https://example-dev.github.io/wordfreq/",
+    "license": "https://github.com/example-dev/wordfreq/blob/main/LICENSE",
+    "programmingLanguage": "Python",
+    "softwareVersion": "0.3.0",
+    "author": {"@type": "Person", "name": "example-dev", "url": "https://github.com/example-dev"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "How do I count word frequency in a text file from the command line?", "acceptedAnswer": {"@type": "Answer", "text": "Install wordfreq and run wordfreq yourfile.txt. It prints the 10 most common words with their counts; use -n 50 to show more."}},
+      {"@type": "Question", "name": "How do I ignore common words like \"the\" and \"and\" when counting?", "acceptedAnswer": {"@type": "Answer", "text": "Pass them with --stop, for example wordfreq book.txt --stop the,and,a,of. Matching is case-insensitive."}},
+      {"@type": "Question", "name": "Can I count words across many files at once?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Pass several files or a shell glob (wordfreq notes/*.txt); the counts are summed into one list."}},
+      {"@type": "Question", "name": "Is there a word counter that needs no dependencies?", "acceptedAnswer": {"@type": "Answer", "text": "wordfreq uses only the Python standard library, so it needs Python 3.9+ and nothing else."}},
+      {"@type": "Question", "name": "How is this different from the wordfreq package on PyPI?", "acceptedAnswer": {"@type": "Answer", "text": "They are unrelated. The PyPI package (rspeer/wordfreq) looks up how common a word is in a language; this tool counts words in files you give it."}},
+      {"@type": "Question", "name": "How is this different from sort | uniq -c?", "acceptedAnswer": {"@type": "Answer", "text": "It does the lower-casing, punctuation handling, stop words and top-N in one command. The shell pipeline is already installed and handles inputs larger than memory."}},
+      {"@type": "Question", "name": "Does it work with non-English text?", "acceptedAnswer": {"@type": "Answer", "text": "Only partly. Words with letters outside A to Z are split (café becomes caf), so results for most other languages are wrong today."}},
+      {"@type": "Question", "name": "Does wordfreq send my text anywhere?", "acceptedAnswer": {"@type": "Answer", "text": "No. It reads local files and prints to the terminal; there is no network code."}},
+      {"@type": "Question", "name": "What does it cost?", "acceptedAnswer": {"@type": "Answer", "text": "Nothing. It is MIT-licensed."}}
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg: #fbfaf7; --fg: #1d1d1b; --muted: #5d5b55; --accent: #2f5bd8; --card: #ffffff; --line: #e6e3dc; }
+    @media (prefers-color-scheme: dark) { :root { --bg: #141413; --fg: #f2f0ea; --muted: #b3b0a6; --accent: #8fb0ff; --card: #1d1d1b; --line: #2e2d2a; } }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--fg); font: 17px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; }
+    main { max-width: 760px; margin: 0 auto; padding: 56px 16px 80px; }
+    h1 { font-size: 2.4rem; line-height: 1.15; margin: 0 0 12px; }
+    h2 { font-size: 1.3rem; margin: 36px 0 8px; }
+    p.lead { font-size: 1.2rem; color: var(--muted); margin: 0 0 28px; }
+    pre { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; overflow-x: auto; }
+    img { max-width: 100%; height: auto; border-radius: 10px; }
+    a { color: var(--accent); }
+    ul { padding-left: 20px; }
+    .cta a { display: inline-block; margin: 0 12px 12px 0; padding: 10px 16px; border-radius: 8px; background: var(--fg); color: var(--bg); text-decoration: none; font-weight: 600; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>wordfreq</h1>
+  <p class="lead">A word frequency counter CLI for plain text files. It prints the most common words across one or more files, with stop-word filtering, using only the Python standard library.</p>
+  <p class="cta"><a href="https://github.com/example-dev/wordfreq">View on GitHub</a><a href="https://github.com/example-dev/wordfreq/blob/main/evals/RESULTS.md">Eval results</a></p>
+  <img src="demo.svg" alt="wordfreq printing the eight most common words across two sample texts" width="880" height="310">
+
+  <h2>Quickstart</h2>
+  <pre><code>pip install git+https://github.com/example-dev/wordfreq
+wordfreq notes/*.txt -n 20 --stop the,and,a,of</code></pre>
+
+  <h2>Proof</h2>
+  <p>9 of 10 fixed eval cases pass (<code>python3 evals/run.py</code>). The failing case is accented words: <code>café</code> is counted as <code>caf</code>.</p>
+
+  <h2>Limitations</h2>
+  <ul>
+    <li>ASCII letters only; most non-English text counts wrongly.</li>
+    <li>Hyphenated words are split; no stemming; no built-in stop list.</li>
+    <li>Files are read fully into memory.</li>
+  </ul>
+
+  <h2>FAQ</h2>
+  <p><strong>Does it send my text anywhere?</strong> No. It reads local files and prints to the terminal.</p>
+  <p><strong>Is it the PyPI <code>wordfreq</code> package?</strong> No, that is an unrelated project that looks up word frequencies in languages.</p>
+  <p>More answers in the <a href="https://github.com/example-dev/wordfreq#faq">README FAQ</a>. MIT licensed.</p>
+</main>
+</body>
+</html>

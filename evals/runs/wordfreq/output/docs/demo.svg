@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="310" viewBox="0 0 880 310" role="img" aria-label="wordfreq output on two sample texts">
+<rect width="100%" height="100%" rx="10" fill="#141413"/>
+<circle cx="24" cy="20" r="6" fill="#e5534b"/><circle cx="44" cy="20" r="6" fill="#d4a72c"/><circle cx="64" cy="20" r="6" fill="#57ab5a"/>
+<g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="17" xml:space="preserve">
+<text x="24" y="64" fill="#8fb0ff">$ wordfreq examples/garden.txt examples/harbour.txt -n 8 --stop the,and,is,in,of,a</text>
+<text x="24" y="90" fill="#f2f0ea">     4  garden</text>
+<text x="24" y="116" fill="#f2f0ea">     4  boats</text>
+<text x="24" y="142" fill="#f2f0ea">     3  we</text>
+<text x="24" y="168" fill="#f2f0ea">     3  on</text>
+<text x="24" y="194" fill="#f2f0ea">     3  harbour</text>
+<text x="24" y="220" fill="#f2f0ea">     2  up</text>
+<text x="24" y="246" fill="#f2f0ea">     2  then</text>
+<text x="24" y="272" fill="#f2f0ea">     2  it</text>
+</g>
+</svg>

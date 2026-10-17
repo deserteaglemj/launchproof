@@ -1,0 +1,19 @@
+{
+  "description": "URL slug generator for Node.js: a 16-line, dependency-free slugify function that turns any string into a lowercase ASCII slug, with custom separator and word-safe max length.",
+  "homepage": "https://example-dev.github.io/tiny-slug/",
+  "topics": [
+    "slug",
+    "slugify",
+    "slug-generator",
+    "url-slug",
+    "permalink",
+    "seo",
+    "nodejs",
+    "javascript",
+    "string-manipulation",
+    "zero-dependency",
+    "unicode",
+    "diacritics"
+  ],
+  "apply_with": "gh repo edit example-dev/tiny-slug --description \"...\" --homepage \"...\" --add-topic a --add-topic b (run only after the owner approves)"
+}

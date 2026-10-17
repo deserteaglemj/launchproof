@@ -179,8 +179,9 @@ def scan_text(text, where, path, names, allow, out):
                     continue
                 out.append(dict(kind=kind, severity="block", where=where, path=path, line=i, evidence=mask(tok)))
         for n in names:
-            if n.search(line):
-                out.append(dict(kind="private-name", severity="block", where=where, path=path, line=i, evidence=mask(n.pattern)))
+            m = n.search(line)
+            if m:
+                out.append(dict(kind="private-name", severity="block", where=where, path=path, line=i, evidence=mask(m.group(0))))
 
 
 def hygiene(path, names_file=None, allow=(), revs=()):
@@ -242,13 +243,14 @@ def hygiene(path, names_file=None, allow=(), revs=()):
                         scan_text("", "history", name, names, allow, out)
                     continue
                 scan_text(data.decode("utf-8", "ignore"), "history", name, names, allow, out)
-        extra = run(["git", "ls-files", "-m", "-o", "--exclude-standard"], cwd=p).stdout.splitlines()
-        files = [p / x for x in extra if (p / x).is_file()]
+        # the files as they are on disk now (tracked and untracked, not ignored)
+        current = run(["git", "ls-files", "-c", "-o", "--exclude-standard"], cwd=p).stdout.splitlines()
+        files = [p / x for x in dict.fromkeys(current) if (p / x).is_file()]
     else:
         files = list(walk(p))
     for fp in files:
         rel = str(fp.relative_to(p))
-        if fp.suffix.lower() in IMAGE_EXT:
+        if fp.suffix.lower() in IMAGE_EXT and not is_git(p):
             out.append(dict(kind="image-review", severity="review", where="worktree", path=rel, line=0,
                             evidence="check you own or may publish this image"))
         try:
@@ -263,7 +265,7 @@ def hygiene(path, names_file=None, allow=(), revs=()):
     # one finding per (kind, path, evidence)
     uniq, keys = [], set()
     for f in out:
-        k = (f["kind"], f["path"], f["evidence"])
+        k = (f["kind"], f["path"], f["evidence"], f["where"] == "worktree")
         if k not in keys:
             keys.add(k)
             uniq.append(f)
@@ -561,7 +563,11 @@ def audit(path, names_file=None, revs=()):
 
     findings = hygiene(p, names_file, (), revs)
     blocks = [f for f in findings if f["severity"] == "block"]
-    add("hygiene", not blocks, 8, f"{len(blocks)} blocking finding(s) in history and working tree", required=True)
+    now = [f for f in blocks if f["where"] == "worktree"]
+    past = [f for f in blocks if f["where"] != "worktree"]
+    add("hygiene-current", not now, 5, f"{len(now)} blocking finding(s) in the files as they are now", required=True)
+    add("hygiene-history", not past, 3,
+        f"{len(past)} blocking finding(s) in git history or commit metadata (fixed only by an owner-approved rewrite)", required=True)
 
     scored = [c for c in checks if not c["na"]]
     total = sum(c["weight"] for c in scored)

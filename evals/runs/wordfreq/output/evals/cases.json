@@ -1,0 +1,15 @@
+{
+  "criteria": "A case passes when the CLI exits 0 and its stdout equals `expected` exactly. Expectations were written before the first run and are not changed to match output.",
+  "cases": [
+    {"id": "case-merge", "files": ["Apple apple APPLE pie"], "args": ["-n", "1"], "expected": "     3  apple\n"},
+    {"id": "stop-words", "files": ["the cat the hat"], "args": ["--stop", "the", "-n", "5"], "expected": "     1  cat\n     1  hat\n"},
+    {"id": "stop-case-insensitive", "files": ["The the"], "args": ["--stop", "THE"], "expected": ""},
+    {"id": "contraction-kept", "files": ["don't don't stop"], "args": ["-n", "1"], "expected": "     2  don't\n"},
+    {"id": "quotes-stripped", "files": ["'hello' hello"], "args": ["-n", "1"], "expected": "     2  hello\n"},
+    {"id": "multi-file-sum", "files": ["a b", "b c"], "args": ["-n", "1"], "expected": "     2  b\n"},
+    {"id": "limit-n", "files": ["x y z"], "args": ["-n", "2"], "expected": "     1  x\n     1  y\n"},
+    {"id": "digits-ignored", "files": ["3 apples 42"], "args": ["-n", "5"], "expected": "     1  apples\n"},
+    {"id": "invalid-utf8-no-crash", "files_hex": ["6f6b20ff206f6b"], "args": ["-n", "1"], "expected": "     2  ok\n"},
+    {"id": "accented-word", "files": ["café café"], "args": ["-n", "1"], "expected": "     2  café\n", "note": "Non-ASCII letters; expected to fail with the current ASCII-only word pattern."}
+  ]
+}

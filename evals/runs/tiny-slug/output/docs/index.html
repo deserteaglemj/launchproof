@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>tiny-slug: dependency-free URL slug generator for Node.js</title>
+  <meta name="description" content="tiny-slug is a URL slug generator for Node.js: a 16-line, dependency-free slugify function that turns any string into a lowercase ASCII slug, with a custom separator and a word-safe length limit.">
+  <link rel="canonical" href="https://example-dev.github.io/tiny-slug/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="tiny-slug: dependency-free URL slug generator for Node.js">
+  <meta property="og:description" content="A 16-line slugify function with no dependencies: lowercase ASCII slugs, custom separator, word-safe max length.">
+  <meta property="og:url" content="https://example-dev.github.io/tiny-slug/">
+  <meta property="og:image" content="https://example-dev.github.io/tiny-slug/social-preview.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    "name": "tiny-slug",
+    "description": "URL slug generator for Node.js: a 16-line, dependency-free slugify function that turns any string into a lowercase ASCII slug.",
+    "codeRepository": "https://github.com/example-dev/tiny-slug",
+    "url": "https://example-dev.github.io/tiny-slug/",
+    "license": "https://github.com/example-dev/tiny-slug/blob/main/LICENSE",
+    "programmingLanguage": "JavaScript",
+    "runtimePlatform": "Node.js",
+    "softwareVersion": "1.2.0",
+    "author": {"@type": "Person", "name": "Dev Person", "url": "https://github.com/example-dev"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "How do I make a URL slug from a string in Node.js?", "acceptedAnswer": {"@type": "Answer", "text": "Install tiny-slug with npm install github:example-dev/tiny-slug, then call slugify(\"Your Title\") to get \"your-title\". It lowercases, strips accents and joins words with -."}},
+      {"@type": "Question", "name": "Is there a slugify function for Node.js with no dependencies?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, tiny-slug has no runtime dependencies. The whole function is 16 lines in index.js, so you can also copy it into your project."}},
+      {"@type": "Question", "name": "How do I limit the length of a slug without cutting a word in half?", "acceptedAnswer": {"@type": "Answer", "text": "Pass maxLength: slugify(\"How to write a tiny slug library\", { maxLength: 20 }) returns \"how-to-write-a-tiny\". There is a known bug when the cut lands exactly on a word boundary."}},
+      {"@type": "Question", "name": "How do I use underscores instead of hyphens in a slug?", "acceptedAnswer": {"@type": "Answer", "text": "Pass { separator: \"_\" }. Letters, digits, - and _ work; regex characters such as . do not yet."}},
+      {"@type": "Question", "name": "How is tiny-slug different from the slugify npm package?", "acceptedAnswer": {"@type": "Answer", "text": "tiny-slug is a single short function with no character map, so it is easy to audit but handles fewer characters. The slugify package maps characters such as ß and supports locales and custom replacements."}},
+      {"@type": "Question", "name": "Does tiny-slug work with Chinese, Japanese or Cyrillic text?", "acceptedAnswer": {"@type": "Answer", "text": "No. Those inputs return an empty string. Use @sindresorhus/slugify, which transliterates many scripts, or keep Unicode slugs with github-slugger."}},
+      {"@type": "Question", "name": "Does tiny-slug send my data anywhere?", "acceptedAnswer": {"@type": "Answer", "text": "No. It is a pure function with no network access, no file access and no dependencies."}},
+      {"@type": "Question", "name": "What does tiny-slug cost and what does it need?", "acceptedAnswer": {"@type": "Answer", "text": "It is free under the MIT license and needs Node.js; it has been tested on Node.js v22."}}
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg: #fbfaf7; --fg: #1d1d1b; --muted: #5d5b55; --accent: #2f5bd8; --card: #ffffff; --line: #e6e3dc; }
+    @media (prefers-color-scheme: dark) { :root { --bg: #141413; --fg: #f2f0ea; --muted: #b3b0a6; --accent: #8fb0ff; --card: #1d1d1b; --line: #2e2d2a; } }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--fg); font: 17px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; }
+    main { max-width: 760px; margin: 0 auto; padding: 56px 16px 80px; }
+    h1 { font-size: 2.4rem; line-height: 1.15; margin: 0 0 12px; }
+    h2 { font-size: 1.3rem; margin: 36px 0 8px; }
+    p.lead { font-size: 1.2rem; color: var(--muted); margin: 0 0 28px; }
+    pre { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; overflow-x: auto; font-size: 15px; }
+    img { max-width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--line); }
+    a { color: var(--accent); }
+    li { margin-bottom: 4px; }
+    .cta a { display: inline-block; margin: 0 12px 12px 0; padding: 10px 16px; border-radius: 8px; background: var(--fg); color: var(--bg); text-decoration: none; font-weight: 600; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>tiny-slug</h1>
+  <p class="lead">A URL slug generator for Node.js: one 16-line function with no dependencies that turns any string into a lowercase ASCII slug.</p>
+  <p class="cta"><a href="https://github.com/example-dev/tiny-slug">View on GitHub</a><a href="https://github.com/example-dev/tiny-slug/blob/main/evals/RESULTS.md">See the results</a></p>
+  <img src="demo.png" alt="Terminal showing slugify turning a recipe title into creme-brulee-and-cafe-recipes" width="1280" height="640">
+
+  <h2>Quickstart</h2>
+  <pre><code>npm install github:example-dev/tiny-slug</code></pre>
+  <pre><code>const { slugify } = require("tiny-slug");
+slugify("Crème Brûlée &amp; Café Recipes!");  // "creme-brulee-and-cafe-recipes"
+slugify("Hello, World!", { separator: "_" }); // "hello_world"</code></pre>
+
+  <h2>Proof</h2>
+  <ul>
+    <li>Unit tests: 5 of 5 pass (<code>npm test</code>).</li>
+    <li>Edge-case eval: 9 of 13 pass (<code>node evals/run.js</code>), measured 2026-10-17 on Node.js v22.</li>
+  </ul>
+
+  <h2>Limitations</h2>
+  <ul>
+    <li><code>ß</code>, <code>ø</code> and similar letters become separators; non-Latin scripts give an empty string.</li>
+    <li>Separators with regex characters such as <code>.</code> give wrong output.</li>
+    <li><code>maxLength</code> drops one word too many when the cut lands exactly on a word boundary.</li>
+  </ul>
+
+  <p>MIT licensed. Read the full <a href="https://github.com/example-dev/tiny-slug#readme">README</a>, including the comparison with other slug libraries and the FAQ.</p>
+</main>
+</body>
+</html>

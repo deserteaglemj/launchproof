@@ -206,7 +206,7 @@ def main():
 
     # keep the agent's output for review (no .git); for the cloned case keep only what launchproof adds
     if case["kind"] == "fixture":
-        shutil.copytree(repo, out_dir / "output", ignore=shutil.ignore_patterns(".git", "node_modules", "__pycache__"))
+        shutil.copytree(repo, out_dir / "output", ignore=shutil.ignore_patterns(".git", "node_modules", "__pycache__", ".venv", "venv", "*.egg-info", ".pytest_cache"))
     else:
         changed = subprocess.run(["git", "status", "--porcelain", "-uall"], cwd=repo, capture_output=True, text=True).stdout
         (out_dir / "changed-files.txt").write_text(changed)

@@ -1,0 +1,17 @@
+# tiny-slug
+
+> tiny-slug is a URL slug generator for Node.js: one 16-line function with no dependencies that turns any string into a lowercase ASCII slug, with a custom separator and a word-safe length limit. It suits Latin-script text; it does not transliterate non-Latin scripts.
+
+Usage: `const { slugify } = require("tiny-slug"); slugify("Crème Brûlée") // "creme-brulee"`. Install with `npm install github:example-dev/tiny-slug`. License: MIT.
+
+## Docs
+
+- [README](https://github.com/example-dev/tiny-slug/blob/main/README.md): what it does, install, options, limitations, comparison, FAQ
+- [AGENTS.md](https://github.com/example-dev/tiny-slug/blob/main/AGENTS.md): commands and layout for coding agents
+- [Results](https://github.com/example-dev/tiny-slug/blob/main/evals/RESULTS.md): unit test and edge-case eval numbers
+- [CHANGELOG](https://github.com/example-dev/tiny-slug/blob/main/CHANGELOG.md): release history
+
+## Optional
+
+- [Landing page](https://example-dev.github.io/tiny-slug/)
+- [Source](https://github.com/example-dev/tiny-slug/blob/main/index.js): the whole library

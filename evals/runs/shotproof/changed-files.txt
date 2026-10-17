@@ -1,0 +1,32 @@
+ M AGENTS.md
+ M CHANGELOG.md
+ M README.md
+ M docs/index.html
+ M docs/launch/LISTINGS.md
+ M docs/llms.txt
+ M evals/RESULTS.md
+ M llms.txt
+ M plugins/shotproof/.claude-plugin/plugin.json
+ M plugins/shotproof/.codex-plugin/plugin.json
+?? .github/ISSUE_TEMPLATE/bug_report.yml
+?? .github/ISSUE_TEMPLATE/config.yml
+?? .github/ISSUE_TEMPLATE/feature_request.yml
+?? .github/pull_request_template.md
+?? CODE_OF_CONDUCT.md
+?? CONTRIBUTING.md
+?? SECURITY.md
+?? docs/launch/LAUNCH-PLAN.md
+?? docs/launch/posts/bluesky-mastodon.md
+?? docs/launch/posts/devto.md
+?? docs/launch/posts/directories.md
+?? docs/launch/posts/discord-slack.md
+?? docs/launch/posts/linkedin.md
+?? docs/launch/posts/newsletters.md
+?? docs/launch/posts/product-hunt.md
+?? docs/launch/posts/reddit.md
+?? docs/launch/posts/show-hn.md
+?? docs/launch/posts/x.md
+?? docs/launch/repo-metadata.json
+?? docs/releases/v0.4.4.md
+?? docs/social-preview.html
+?? docs/social-preview.png

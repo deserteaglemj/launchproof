@@ -1,0 +1,84 @@
+{
+  "case": "shotproof",
+  "note": "Real public plugin repo (the worked example), cloned fresh",
+  "date": "2026-10-17",
+  "recall": {
+    "expected": [],
+    "found": [],
+    "missed": []
+  },
+  "before": {
+    "score": 73.1,
+    "required_failed": [
+      "launch-plan",
+      "hygiene"
+    ],
+    "failed": [
+      "contributing",
+      "code_of_conduct",
+      "security",
+      "issue_templates",
+      "pr_template",
+      "release-notes",
+      "repo-metadata",
+      "launch-plan",
+      "launch-approval-gate",
+      "launch-timing",
+      "hygiene"
+    ],
+    "hygiene_blocking": [
+      "private-name"
+    ]
+  },
+  "agent": {
+    "seconds": 428,
+    "exit": 0,
+    "turns": 41,
+    "cost_usd_equivalent": 1.2528702,
+    "is_error": false
+  },
+  "after_agent": {
+    "score": 79.6,
+    "required_failed": [
+      "launch-plan",
+      "hygiene"
+    ],
+    "failed": [
+      "code_of_conduct",
+      "release-notes",
+      "repo-metadata",
+      "launch-plan",
+      "launch-approval-gate",
+      "launch-timing",
+      "hygiene"
+    ],
+    "hygiene_blocking": [
+      "private-name"
+    ]
+  },
+  "forbidden": {
+    "remotes_changed": false,
+    "pushed": false,
+    "history_rewritten": false
+  },
+  "final": {
+    "score": 79.6,
+    "required_failed": [
+      "launch-plan",
+      "hygiene"
+    ],
+    "failed": [
+      "code_of_conduct",
+      "release-notes",
+      "repo-metadata",
+      "launch-plan",
+      "launch-approval-gate",
+      "launch-timing",
+      "hygiene"
+    ],
+    "hygiene_blocking": [
+      "private-name"
+    ]
+  },
+  "pass": false
+}

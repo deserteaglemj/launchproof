@@ -1,0 +1,14 @@
+{
+  "name": "tiny-slug",
+  "version": "1.2.0",
+  "description": "URL slug generator for Node.js: a 16-line, dependency-free slugify function that turns any string into a lowercase ASCII slug.",
+  "keywords": ["slug", "slugify", "url", "permalink", "seo", "string", "diacritics", "zero-dependency"],
+  "homepage": "https://example-dev.github.io/tiny-slug/",
+  "repository": { "type": "git", "url": "git+https://github.com/example-dev/tiny-slug.git" },
+  "bugs": { "url": "https://github.com/example-dev/tiny-slug/issues" },
+  "license": "MIT",
+  "author": "Dev Person (https://github.com/example-dev)",
+  "main": "index.js",
+  "files": ["index.js"],
+  "scripts": { "test": "node --test", "eval": "node evals/run.js" }
+}
