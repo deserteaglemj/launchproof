@@ -1,0 +1,45 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ["3.9", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Self-tests
+        run: python -m unittest discover -s plugins/launchproof/tests -v
+      - name: Manifests parse
+        run: python -c "import json; [json.load(open(p)) for p in ['.claude-plugin/marketplace.json','plugins/launchproof/.claude-plugin/plugin.json','plugins/launchproof/.codex-plugin/plugin.json']]"
+      - name: Hygiene scan of this repo's full history
+        run: python plugins/launchproof/skills/launchproof/scripts/lp.py hygiene . --rev HEAD
+      - name: Launch checklist on this repo (dogfood, must score 90+)
+        run: python plugins/launchproof/skills/launchproof/scripts/lp.py audit . --rev HEAD --min 90
+
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install Claude Code CLI
+        run: npm install -g @anthropic-ai/claude-code
+      - name: claude plugin validate --strict
+        run: |
+          claude plugin validate --strict ./plugins/launchproof
+          claude plugin validate --strict .

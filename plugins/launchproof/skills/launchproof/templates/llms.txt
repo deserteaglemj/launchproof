@@ -1,0 +1,15 @@
+# {{NAME}}
+
+> {{DESCRIPTION}}
+
+Repository: https://github.com/{{REPO}} . License: see LICENSE.
+
+## Docs
+
+- [README](https://github.com/{{REPO}}/blob/main/README.md): what it does, install, limitations, FAQ
+- [AGENTS.md](https://github.com/{{REPO}}/blob/main/AGENTS.md): commands and layout for coding agents
+- [CHANGELOG](https://github.com/{{REPO}}/blob/main/CHANGELOG.md): release history
+
+## Optional
+
+- [Landing page]({{HOMEPAGE}})

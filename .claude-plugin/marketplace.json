@@ -1,0 +1,17 @@
+{
+  "name": "launchproof",
+  "owner": {
+    "name": "Marquis Jackson",
+    "url": "https://github.com/deserteaglemj"
+  },
+  "metadata": {
+    "description": "Marketplace for the launchproof plugin, shared by Claude Code and Codex."
+  },
+  "plugins": [
+    {
+      "name": "launchproof",
+      "source": "./plugins/launchproof",
+      "description": "Make a finished project public-ready on GitHub (hygiene scan, README with proof, CI, llms.txt, Pages) and plan its launch."
+    }
+  ]
+}

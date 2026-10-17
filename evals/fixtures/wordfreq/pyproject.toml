@@ -1,0 +1,6 @@
+[project]
+name = "wordfreq"
+version = "0.3.0"
+
+[project.scripts]
+wordfreq = "wordfreq.cli:main"

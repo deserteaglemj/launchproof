@@ -1,0 +1,33 @@
+{
+  "name": "launchproof",
+  "version": "0.1.0",
+  "description": "Turn a finished project into a public-ready GitHub repo for Claude Code and Codex: full-history hygiene scan (emails, home paths, secrets, private names), README with proof, comparison, limitations and FAQ, community health files, CI badge, release notes, llms.txt, AGENTS.md, a GitHub Pages page with JSON-LD and Open Graph, topics and social preview, scored by a checklist and fixed until it passes, plus a multi-channel launch plan with draft posts. Never publishes or posts on its own.",
+  "author": {
+    "name": "Marquis Jackson",
+    "url": "https://github.com/deserteaglemj"
+  },
+  "homepage": "https://deserteaglemj.github.io/launchproof/",
+  "repository": "https://github.com/deserteaglemj/launchproof",
+  "license": "MIT",
+  "keywords": [
+    "github",
+    "open source",
+    "readme",
+    "readme generator",
+    "launch",
+    "launch plan",
+    "repo hygiene",
+    "git history scan",
+    "secret scan",
+    "llms.txt",
+    "agents.md",
+    "github pages",
+    "json-ld",
+    "seo",
+    "geo",
+    "show hn",
+    "release",
+    "changelog",
+    "no api key"
+  ]
+}

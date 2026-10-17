@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{NAME}}: {{DESCRIPTION}}</title>
+  <meta name="description" content="{{DESCRIPTION}}">
+  <link rel="canonical" href="{{HOMEPAGE}}">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{NAME}}">
+  <meta property="og:description" content="{{DESCRIPTION}}">
+  <meta property="og:url" content="{{HOMEPAGE}}">
+  <meta property="og:image" content="{{HOMEPAGE}}social-preview.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    "name": "{{NAME}}",
+    "description": "{{DESCRIPTION}}",
+    "codeRepository": "https://github.com/{{REPO}}",
+    "url": "{{HOMEPAGE}}",
+    "license": "https://github.com/{{REPO}}/blob/main/LICENSE",
+    "author": {"@type": "Person", "name": "{{AUTHOR}}", "url": "https://github.com/{{OWNER}}"}
+  }
+  </script>
+  <style>
+    :root { --bg: #fbfaf7; --fg: #1d1d1b; --muted: #5d5b55; --accent: #2f5bd8; --card: #ffffff; --line: #e6e3dc; }
+    @media (prefers-color-scheme: dark) { :root { --bg: #141413; --fg: #f2f0ea; --muted: #b3b0a6; --accent: #8fb0ff; --card: #1d1d1b; --line: #2e2d2a; } }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--fg); font: 17px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; }
+    main { max-width: 760px; margin: 0 auto; padding: 56px 16px 80px; }
+    h1 { font-size: 2.4rem; line-height: 1.15; margin: 0 0 12px; }
+    p.lead { font-size: 1.2rem; color: var(--muted); margin: 0 0 28px; }
+    pre { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; overflow-x: auto; }
+    a { color: var(--accent); }
+    .cta a { display: inline-block; margin: 0 12px 12px 0; padding: 10px 16px; border-radius: 8px; background: var(--fg); color: var(--bg); text-decoration: none; font-weight: 600; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>{{NAME}}</h1>
+  <p class="lead">{{DESCRIPTION}}</p>
+  <p class="cta"><a href="https://github.com/{{REPO}}">View on GitHub</a></p>
+</main>
+</body>
+</html>

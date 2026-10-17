@@ -1,0 +1,6 @@
+{
+  "description": "{{DESCRIPTION}}",
+  "homepage": "{{HOMEPAGE}}",
+  "topics": [],
+  "apply_with": "gh repo edit {{REPO}} --description \"...\" --homepage \"...\" --add-topic a --add-topic b (run only after the owner approves)"
+}
