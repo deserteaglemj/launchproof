@@ -1,0 +1,23 @@
+{
+  "description": "Claude Code and Codex plugin that makes a finished project public-ready on GitHub: full-history hygiene scan, evidence-backed README, community files, CI, llms.txt, Pages with JSON-LD, scored checklist and a launch plan.",
+  "homepage": "https://deserteaglemj.github.io/launchproof/",
+  "topics": [
+    "claude-code",
+    "claude-code-plugin",
+    "codex",
+    "agent-skills",
+    "open-source",
+    "github",
+    "readme",
+    "readme-generator",
+    "launch-checklist",
+    "git-history",
+    "secret-scanning",
+    "llms-txt",
+    "agents-md",
+    "github-pages",
+    "json-ld",
+    "developer-tools"
+  ],
+  "apply_with": "gh repo edit deserteaglemj/launchproof --description \"...\" --homepage \"...\" --add-topic <each topic> (run only after the owner approves)"
+}

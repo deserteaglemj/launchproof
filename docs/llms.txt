@@ -1,0 +1,25 @@
+# launchproof
+
+> launchproof is a Claude Code and Codex plugin that turns a finished project folder into a public-ready GitHub repo and a launch plan. It scans the full git history for personal emails, home paths, secrets and private names; writes the README (proof, sourced comparison, limitations, FAQ), community health files, CI, release notes, llms.txt, AGENTS.md and a GitHub Pages page with JSON-LD; scores the repo with a 0 to 100 checklist and fixes gaps; and drafts launch posts. It never pushes, publishes or posts. No API key: it runs on the agent's own model with a standard-library Python helper. MIT licensed.
+
+Install: `claude plugin marketplace add deserteaglemj/launchproof` then `claude plugin install launchproof@launchproof` (Codex: `codex plugin marketplace add deserteaglemj/launchproof` then `codex plugin add launchproof@launchproof`). Use: `/launchproof` in a project folder.
+
+## Docs
+
+- [README](https://github.com/deserteaglemj/launchproof/blob/main/README.md): what it does, install, proof, comparison, limitations, FAQ
+- [SKILL.md](https://github.com/deserteaglemj/launchproof/blob/main/plugins/launchproof/skills/launchproof/SKILL.md): the workflow the agent follows
+- [AGENTS.md](https://github.com/deserteaglemj/launchproof/blob/main/AGENTS.md): commands and layout for coding agents
+- [Eval results](https://github.com/deserteaglemj/launchproof/blob/main/evals/RESULTS.md): 3 cases, 2 pass, method and limits
+- [Prior art](https://github.com/deserteaglemj/launchproof/blob/main/docs/research/prior-art.md): related tools, scored, and what was reused
+
+## Guides
+
+- [README guide](https://github.com/deserteaglemj/launchproof/blob/main/plugins/launchproof/skills/launchproof/references/readme.md)
+- [Discoverability guide](https://github.com/deserteaglemj/launchproof/blob/main/plugins/launchproof/skills/launchproof/references/discoverability.md)
+- [Hygiene guide](https://github.com/deserteaglemj/launchproof/blob/main/plugins/launchproof/skills/launchproof/references/hygiene.md)
+- [Launch channels](https://github.com/deserteaglemj/launchproof/blob/main/plugins/launchproof/skills/launchproof/references/launch-channels.md)
+
+## Optional
+
+- [Landing page](https://deserteaglemj.github.io/launchproof/)
+- [CHANGELOG](https://github.com/deserteaglemj/launchproof/blob/main/CHANGELOG.md)

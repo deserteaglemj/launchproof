@@ -66,6 +66,9 @@ BANNED_CLAIMS = re.compile(
     r"\bindustry[- ]leading|\bunparalleled\b|\bcutting[- ]edge\b|\bstate[- ]of[- ]the[- ]art\b)")
 
 
+PLACEHOLDER = re.compile(r"(?<!\$)\{\{[A-Z][A-Z_]*\}\}")  # scaffold tokens like {{NAME}}, not GitHub Actions ${{ }}
+
+
 def run(args, cwd=None, check=False, binary=False):
     r = subprocess.run(args, cwd=cwd, capture_output=True, text=not binary)
     if check and r.returncode:
@@ -467,7 +470,7 @@ def audit(path, names_file=None, revs=()):
     add("readme-links", not broken, 3, "relative links resolve" if not broken else f"missing: {broken[:5]}")
     leftovers = []
     for fp in [x for x in walk(p) if x.suffix in (".md", ".txt", ".html", ".yml", ".yaml", ".json", ".xml")]:
-        if "{{" in fp.read_text(errors="ignore") and ".launchproof" not in fp.parts and "templates" not in fp.parts:
+        if PLACEHOLDER.search(fp.read_text(errors="ignore")) and "templates" not in fp.parts:
             leftovers.append(str(fp.relative_to(p)))
     add("no-placeholders", not leftovers, 3, "no {{PLACEHOLDER}} left" if not leftovers else f"in: {leftovers[:5]}")
 

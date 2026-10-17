@@ -132,6 +132,10 @@ class ScaffoldAndAudit(unittest.TestCase):
         self.assertFalse(res["pages-jsonld"]["ok"])
         self.assertFalse(res["no-placeholders"]["ok"])
 
+    def test_actions_expressions_are_not_placeholders(self):
+        self.assertFalse(lp.PLACEHOLDER.search("python-version: ${{ matrix.python }}"))
+        self.assertTrue(lp.PLACEHOLDER.search("# {{NAME}}"))
+
     def test_proof_numbers_must_appear_in_linked_file(self):
         (self.repo / "evals").mkdir()
         (self.repo / "evals/RESULTS.md").write_text("pass rate 0.93 on 12 cases\n")
